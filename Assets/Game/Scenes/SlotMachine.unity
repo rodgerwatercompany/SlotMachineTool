@@ -523,7 +523,7 @@ MonoBehaviour:
   - {fileID: 835407304}
   - {fileID: 577849025}
   - {fileID: 480294249}
-  SlotSpeed_max: 1000
+  SlotSpeed_max: 2000
 --- !u!4 &192697329
 Transform:
   m_ObjectHideFlags: 0
@@ -4031,20 +4031,20 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 46
-  mHeight: 16
+  mWidth: 87
+  mHeight: 30
   mDepth: 4
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.875
+  aspectRatio: 2.9000001
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
   mText: Button
-  mFontSize: 16
+  mFontSize: 30
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1

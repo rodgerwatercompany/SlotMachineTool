@@ -12,9 +12,6 @@ public class SlotMachine : MonoBehaviour {
 
     void Awake()
     {
-
-        //Application.targetFrameRate = 30;
-        QualitySettings.vSyncCount = 0;
     }
 
     // Use this for initialization
@@ -37,11 +34,12 @@ public class SlotMachine : MonoBehaviour {
             int idx = GetNowIdx();
             if (idx != -1)
             {
-                print(fspeeds[idx]);
-                fspeeds[idx] -= (250 * Time.deltaTime);
+
+                fspeeds[idx] -= (1000 * Time.deltaTime);
 
                 if (fspeeds[idx] <= 600.0f)
                 {
+
                     fspeeds[idx] = 600.0f;
                     tileLines[idx].StopRun();
                 }

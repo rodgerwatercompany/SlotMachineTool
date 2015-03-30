@@ -922,7 +922,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde1f4e11dfa73d4eab2a69e1a51fc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sw_move: 0
-  bBreak_1: 0
-  bBreak_2: 0
+  bClick_Start: 0
+  bClick_Break: 0
   speed: 0
+  SpecifyArea: 0
+  SpecifyNum: 1
+  SpecifyPos: 0
