@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class SlotMachine : MonoBehaviour {
 
@@ -50,6 +49,11 @@ public class SlotMachine : MonoBehaviour {
                 bBreak = false;
         }
 	}
+    
+    public void OnClick_StartRotate()
+    {
+        tileLines[0].StartRotate("Bell");
+    }
 
     public void OnClick_StartRun()
     {
@@ -66,8 +70,6 @@ public class SlotMachine : MonoBehaviour {
 
     public void OnClick_StartStop()
     {
-
-
 
         bBreak = true;
         /*

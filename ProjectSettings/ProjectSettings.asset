@@ -10,7 +10,7 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Rodger
   productName: SlotMachineTool
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -67,10 +67,10 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.Company.ProductName
+  iPhoneBundleIdentifier: bbin.rodger.specialcard
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
-  productGUID: decb3afc2c994604ba5daf64ba1254ac
+  productGUID: 6ac2967c2f2a02a41b841c97ae0e8266
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
@@ -114,7 +114,6 @@ PlayerSettings:
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
-  locationUsageDescription: 
   XboxTitleId: 
   XboxImageXexPath: 
   XboxSpaPath: 

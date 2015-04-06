@@ -13,6 +13,12 @@ public class TileLine : MonoBehaviour {
 
     private bool sw_Timercount;
 
+
+    private bool sw_rotate;
+    private bool sw_changecard;
+    private int idx_rotate;
+    private string name_changecard;
+
 	// Use this for initialization
 	void Start () {
 
@@ -28,6 +34,8 @@ public class TileLine : MonoBehaviour {
         if (this.sw_Move)
             this.Move();
 
+        if (sw_rotate)
+            this.RotateCard();
 	}
 
     public void SetSpeed(float speed)
@@ -44,7 +52,6 @@ public class TileLine : MonoBehaviour {
 
         for (int i = 0; i < tileObjects.Length; i++)
         {
-            float pos_old = tileObjects[i].transform.localPosition.y;
             float pos_new = tileObjects[i].transform.localPosition.y - dis;
             float limit = -750.0f + i * 150.0f;
 
@@ -82,6 +89,37 @@ public class TileLine : MonoBehaviour {
         if (!this.sw_Move)
             this.ResetPosition();
         
+    }
+
+    public void RotateCard()
+    {
+
+        float dis = 100.0f * Time.deltaTime;
+
+        float next_angle = tileObjects[this.idx_rotate].transform.localRotation.eulerAngles.y + dis;
+
+        if (next_angle < 180.0f)
+        {
+            tileObjects[this.idx_rotate].transform.Rotate(0.0f, dis, 0.0f);
+
+            if(!sw_changecard && next_angle > 90.0f)
+            {
+                sw_changecard = true;
+                tileObjects[this.idx_rotate].SetSprite(name_changecard);
+            }
+        }
+        else
+        {
+            tileObjects[this.idx_rotate].transform.localRotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+            sw_rotate = false;
+        }
+    }
+
+    public void StartRotate(string spname)
+    {
+        sw_rotate = true;
+        sw_changecard = false;
+        name_changecard = spname;
     }
 
     public void StartRun()
