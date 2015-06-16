@@ -3,11 +3,13 @@ using System.Collections;
 
 public class TileObject : MonoBehaviour {
 
-    public UISprite uisprite;
+    private UISprite uisprite;
+
 	// Use this for initialization
 	void Start () {
-	
-	}
+
+        uisprite = gameObject.GetComponentInChildren<UISprite>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,4 +25,5 @@ public class TileObject : MonoBehaviour {
     {
         uisprite.spriteName = name;
     }
+
 }

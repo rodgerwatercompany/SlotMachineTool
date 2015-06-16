@@ -5,37 +5,37 @@ public class TileLine : MonoBehaviour {
 
     private float fspeed;
 
-
     public TileObject[] tileObjects;
+
+    private bool sw_Move_all;
 
     private bool sw_Move;
     private bool sw_Break;
+    private bool sw_Rebound;
 
-    private bool sw_Timercount;
+    private float timer_rebound;
 
+    private int cnt_stop = 0;
 
-    private bool sw_rotate;
-    private bool sw_changecard;
-    private int idx_rotate;
-    private string name_changecard;
+    public delegate void TL_FinishSpin();
 
-	// Use this for initialization
-	void Start () {
+    TL_FinishSpin tilefinishspin;
 
-        this.sw_Move = false;
+    // Use this for initialization
+    void Start () {
+
+        this.sw_Move_all = false;
         this.sw_Break = false;
-        this.sw_Timercount = false;
 
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (this.sw_Move)
-            this.Move();
-
-        if (sw_rotate)
-            this.RotateCard();
+        if (sw_Move_all)
+        {
+            MoveSymbol();            
+        }
 	}
 
     public void SetSpeed(float speed)
@@ -43,101 +43,160 @@ public class TileLine : MonoBehaviour {
         this.fspeed = speed;
     }
 
-    public void Move()
+    public float GetSpeed()
     {
+        return this.fspeed;
+    }
 
+    public void MoveSymbol()
+    {
         float dis = this.fspeed * Time.deltaTime;
 
-        bool btunround = false;
-
-        for (int i = 0; i < tileObjects.Length; i++)
+        // 在此判斷為反彈不執行位置更改
+        if (!sw_Rebound)
         {
-            float pos_new = tileObjects[i].transform.localPosition.y - dis;
-            float limit = -750.0f + i * 150.0f;
-
-            if (sw_Break)
+            float pos_new_y;
+            for (int idx = 0; idx < 8; idx++)
             {
-                if (pos_new <= limit)
+                pos_new_y = tileObjects[idx].transform.localPosition.y - dis;
+
+                tileObjects[idx].SetPosition(pos_new_y);
+            }
+        }
+        else
+            timer_rebound += Time.deltaTime;
+
+        if (!sw_Break)
+        {
+            if ((tileObjects[0].transform.localPosition.y - dis) < -165.0f)
+                Turnround();
+        }
+        else
+        {
+            if (!sw_Rebound)
+            {
+                if (tileObjects[5].transform.localPosition.y <= -50.0f)
                 {
-                    //tileObjects[i].transform.localPosition = new Vector3(0.0f, limit, 0.0f);
-                    tileObjects[i].SetPosition(limit);
-                    this.sw_Move = false;
-                }
-                else
-                {
-                    //tileObjects[i].transform.localPosition = new Vector3(0.0f, pos_new, 0.0f);
-                    tileObjects[i].SetPosition(pos_new);
+                    sw_Rebound = true;
+                    timer_rebound = 0.0f;
                 }
             }
             else
             {
-                //tileObjects[i].transform.localPosition = new Vector3(0.0f, pos_new, 0.0f);
-                tileObjects[i].SetPosition(pos_new);
-
-                if (pos_new < -150.0f)
+                if (timer_rebound >= 0.05f)
                 {
-                    //print("btrunround");
-                    btunround = true;
-                }
+                    float _pos_new_y;
+                    for (int idx = 0; idx < 8; idx++)
+                    {
+                        _pos_new_y = -825.0f + idx * 165.0f; ;
 
+                        tileObjects[idx].SetPosition(_pos_new_y);
+                    }
+
+                    sw_Move_all = false;
+
+                }
+                else
+                {
+                    // 執行取得反彈對應位置
+                    float pos_y_5 = Global.moveMethod.GetOutput(timer_rebound);
+
+                    float pos_new_y;
+                    for (int idx = 0; idx < 8; idx++)
+                    {
+                        pos_new_y = pos_y_5 + ((idx - 5) * 165);
+
+                        tileObjects[idx].SetPosition(pos_new_y);
+                    }
+                }
+                
             }
         }
-
-        if (btunround)
-            this.Turnround();
-        
-        if (!this.sw_Move)
-            this.ResetPosition();
-        
     }
-
-    public void RotateCard()
+    /*
+    public void Move(int idx)
     {
+        float dis = this.fspeed * Time.deltaTime;
 
-        float dis = 100.0f * Time.deltaTime;
-
-        float next_angle = tileObjects[this.idx_rotate].transform.localRotation.eulerAngles.y + dis;
-
-        if (next_angle < 180.0f)
+        float pos_new , limit;
+        if (dir_down[idx])
         {
-            tileObjects[this.idx_rotate].transform.Rotate(0.0f, dis, 0.0f);
-
-            if(!sw_changecard && next_angle > 90.0f)
-            {
-                sw_changecard = true;
-                tileObjects[this.idx_rotate].SetSprite(name_changecard);
-            }
+            pos_new = tileObjects[idx].transform.localPosition.y - dis;
+            limit = (-825.0f - 50.0f) + idx * 165.0f;
         }
         else
         {
-            tileObjects[this.idx_rotate].transform.localRotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
-            sw_rotate = false;
+            pos_new = tileObjects[idx].transform.localPosition.y + dis;
+            limit = -825.0f + idx * 165.0f;
+        }
+
+        if (sw_Break)
+        {
+
+            tileObjects[idx].SetPosition(pos_new);
+
+            if (dir_down[idx])
+            {
+                if (pos_new <= limit)
+                {
+                    dir_down[idx] = false;
+                }
+            }
+            else
+            {
+                if (pos_new >= limit)
+                {
+                    tileObjects[idx].SetPosition(limit);
+
+                    sw_Move[idx] = false;
+                    cnt_stop++;
+
+                    if (cnt_stop == 8)
+                    {
+                        sw_Move_all = false;
+                        tilefinishspin();
+                    }
+                }
+
+            }
+
+        }
+        else
+        {
+            tileObjects[idx].SetPosition(pos_new);
+
+            if (pos_new < -165.0f)
+            {
+                btunround = true;
+            }
+
         }
     }
-
-    public void StartRotate(string spname)
-    {
-        sw_rotate = true;
-        sw_changecard = false;
-        name_changecard = spname;
-    }
-
+    */
+    
     public void StartRun()
     {
+        sw_Move_all = true;
+        
+        sw_Move = true;
+        sw_Break = false;
+        sw_Rebound = false;
 
-        this.sw_Move = true;
-        this.sw_Break = false;
+        cnt_stop = 0;
     }
-    public void StopRun()
+    public void StopRun(TL_FinishSpin finishspin)
     {
 
         this.sw_Break = true;
+        tilefinishspin = new TL_FinishSpin(finishspin);
     }
 
-    private void TimerCountDown()
+    public void SetSprites(string[] idxs)
     {
-
+        for (int i = 7, j = 0; j < idxs.Length; i--, j++)
+            tileObjects[i].SetSprite(idxs[j]);
     }
+
     // 5 6 7 不動
     private void ResetPosition()
     {
@@ -156,7 +215,7 @@ public class TileLine : MonoBehaviour {
         for (int i = 0; i < 5; i++)
         {
             tileObjects[i + 3] = temps[i];
-            tileObjects[i + 3].SetPosition(450.0f + 150.0f * i);
+            tileObjects[i + 3].SetPosition(495.0f + 165.0f * i);
         }
 
     }

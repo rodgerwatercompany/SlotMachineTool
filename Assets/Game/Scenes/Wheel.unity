@@ -926,5 +926,6 @@ MonoBehaviour:
   bClick_Break: 0
   speed: 0
   SpecifyArea: 0
-  SpecifyNum: 1
+  SpecifyNum: 2
   SpecifyPos: 0
+  waittime: 5

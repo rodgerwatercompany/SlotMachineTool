@@ -55,7 +55,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Bell
-    x: 320
+    x: 321
     y: 361
     width: 151
     height: 151

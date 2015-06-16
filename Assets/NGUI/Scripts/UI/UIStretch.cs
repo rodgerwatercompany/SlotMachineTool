@@ -22,7 +22,9 @@ public class UIStretch : MonoBehaviour
 		Both,
 		BasedOnHeight,
 		FillKeepingRatio, // Fits the image so that it entirely fills the specified container keeping its ratio
-		FitInternalKeepingRatio // Fits the image/item inside of the specified container keeping its ratio
+		FitInternalKeepingRatio, // Fits the image/item inside of the specified container keeping its ratio
+		MyFitInternalKeepingRatio,
+        MyBoth
 	}
 
 	/// <summary>
@@ -81,6 +83,15 @@ public class UIStretch : MonoBehaviour
 	Animation mAnim;
 	Rect mRect;
 	bool mStarted = false;
+	Vector2 mCamareSize = new Vector2(1f, 1f);
+
+	public Vector2 CamareSize
+	{
+		get
+		{
+			return mCamareSize;
+		}
+	}
 
 	void Awake ()
 	{
@@ -239,7 +250,51 @@ public class UIStretch : MonoBehaviour
 					size.x = initialSize.x * scale;
 					size.y = rectHeight;
 				}
-			}
+			} else if (style == Style.MyFitInternalKeepingRatio)
+			{
+				float screenRatio = rectWidth / rectHeight;
+				float imageRatio = initialSize.x / initialSize.y;
+				
+				if (imageRatio < screenRatio)
+				{
+					//BasedOnHeight
+					size.x = (1.0f / initialSize.y) * rectHeight;
+					size.y = size.x;
+                    size.z = size.x;
+                    mCamareSize.x = imageRatio;
+				}
+				else
+				{
+					//BasedOnWidth
+					size.x = (1.0f / initialSize.x) * rectWidth;
+					size.y = size.x;
+                    size.z = size.x;
+					mCamareSize.x = screenRatio;
+					mCamareSize.y = mCamareSize.x*initialSize.y / initialSize.x;
+				}
+            }
+            else if (style == Style.MyBoth)
+            {
+                float screenRatio = rectWidth / rectHeight;
+                float imageRatio = initialSize.x / initialSize.y;
+
+                if (imageRatio < screenRatio)
+                {
+                    //BasedOnHeight
+                    size.y = (1.0f / initialSize.y) * rectHeight;
+                    //size.x = size.y * ((rectWidth / rectHeight) / (initialSize.x / initialSize.y));
+                    size.x = rectWidth / initialSize.x;
+                    mCamareSize.x = screenRatio;
+                }
+                else
+                {
+                    //BasedOnWidth
+                    size.x = (1.0f / initialSize.x) * rectWidth;
+                    //size.y = size.x * ((rectHeight / rectWidth) / (initialSize.y / initialSize.x));
+                    size.y = rectHeight / initialSize.y;
+                    mCamareSize.x = screenRatio;
+                }
+            }
 			else
 			{
 				if (style != Style.Vertical)

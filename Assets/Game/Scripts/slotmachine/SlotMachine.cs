@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
+using System.Collections;
 
-public class SlotMachine : MonoBehaviour {
+public class SlotMachine : MonoBehaviour
+{
+    
 
     public TileLine[] tileLines;
     public float SlotSpeed_max;
@@ -9,19 +12,27 @@ public class SlotMachine : MonoBehaviour {
 
     private bool bBreak;
 
-    void Awake()
-    {
-    }
+    private bool bAutoBreak;
 
+    private string[] tilesprites;
+
+    public string Name_Function_FinishStopSpin;
+
+    private int cnt_finishstop;
+    
     // Use this for initialization
     void Start()
     {
+        Global.moveMethod.Init(-50.0f, 0.0f, 0.05f);
+
+        //Islotmachine2GM = GameManager.Instance;
 
         foreach (TileLine tileline in tileLines)
             tileline.SetSpeed(this.SlotSpeed_max);
 
         bBreak = false;
-        fspeeds = new float[5] { 1000, 1000 , 1000 , 1000  , 1000 };
+        bAutoBreak = false;
+        fspeeds = new float[5] { 0, 0 , 0 , 0  , 0 };
     }
 	
 	// Update is called once per frame
@@ -34,29 +45,84 @@ public class SlotMachine : MonoBehaviour {
             if (idx != -1)
             {
 
-                fspeeds[idx] -= (1000 * Time.deltaTime);
+                fspeeds[idx] -= (2000 * Time.deltaTime);
 
-                if (fspeeds[idx] <= 600.0f)
+                if (fspeeds[idx] <= 700.0f)
                 {
-
-                    fspeeds[idx] = 600.0f;
-                    tileLines[idx].StopRun();
+                    fspeeds[idx] = 700.0f;
+                    tileLines[idx].SetSprites(GetTileSpriteInfo(idx));
+                    tileLines[idx].StopRun(this.FinishSpin);
                 }
 
                 tileLines[idx].SetSpeed(fspeeds[idx]);
             }
             else
+            {
                 bBreak = false;
+            }
+        }
+        else if(bAutoBreak)
+        {
+            int cnt_over = 0;
+            for (int i = 0; i < tileLines.Length; i++)
+            {
+                if (fspeeds[i] > 700.0f)
+                {
+                    fspeeds[i] -= (1000 * Time.deltaTime);
+
+                    if (fspeeds[i] <= 700.0f)
+                    {
+                        fspeeds[i] = 700.0f;
+                        tileLines[i].SetSprites(GetTileSpriteInfo(i));
+                        tileLines[i].StopRun(this.FinishSpin);
+                    }
+
+                    tileLines[i].SetSpeed(fspeeds[i]);
+                }
+                else
+                {
+                    cnt_over++;
+                }
+            }
+
+            if(cnt_over >= tileLines.Length -1)
+            {
+                bAutoBreak = false;
+            }
         }
 	}
     
-    public void OnClick_StartRotate()
+    public void OnClick_Spin()
     {
-        tileLines[0].StartRotate("Bell");
+        //Islotmachine2GM.OnClick_Spin(false);
     }
 
-    public void OnClick_StartRun()
+    public void OnClick_AutoSpin()
     {
+        //Islotmachine2GM.OnClick_Spin(true);
+    }
+
+    public void OnClick_StopAutoSpin()
+    {
+        //Islotmachine2GM.OnClick_StopAutoSpin();
+    }
+
+    public void OnClick_GetScore()
+    {
+        //Islotmachine2GM.OnClick_GetScore();
+    }
+
+    public void StartSpin()
+    {
+        this.StartRun();
+    }
+
+    void StartRun()
+    {
+
+        StartCoroutine(PlayNectSound());
+
+        cnt_finishstop = 0;
 
         for (int i = 0; i < 5; i++)
         {
@@ -66,8 +132,12 @@ public class SlotMachine : MonoBehaviour {
 
         foreach (TileLine tileline in tileLines)
             tileline.StartRun();
+
+        bBreak = false;
+        bAutoBreak = false;
     }
 
+    // 慢慢的自動停止
     public void OnClick_StartStop()
     {
 
@@ -78,14 +148,98 @@ public class SlotMachine : MonoBehaviour {
          */
     }
 
+    // 自動轉使用的停止
+    public void OnClick_StartStop_Immediate()
+    {
+        bAutoBreak = true;
+        bBreak = false;
+    }
+
+    // 手動強制停止
+    public void OnClick_Stop()
+    {
+        bBreak = false;
+
+        for (int idx = 0; idx < tileLines.Length; idx++)
+        {
+            tileLines[idx].SetSprites(GetTileSpriteInfo(idx));
+
+            if(tileLines[idx].GetSpeed() > 700.0f)
+                tileLines[idx].SetSpeed(700.0f);
+            tileLines[idx].StopRun(FinishSpin);
+        }
+    }
+
+    public void SetTileSpriteInfo(string[] sprites)
+    {
+
+        tilesprites = sprites;
+        /*
+        foreach (string name in tilesprites)
+            print("id is " + name);
+        */
+    }
+    
+    private string[] GetTileSpriteInfo(int idx)
+    {
+
+        int len = tilesprites.Length / tileLines.Length;
+
+        int start = (idx * len);
+
+        string[] ret = new string[len];
+
+        for (int i = 0, j = start; j < start + len; i++, j++)
+        {
+            ret[i] = tilesprites[j];
+            //print("idx : " + idx + " tilesprites[" + j + "] : " + tilesprites[j]);
+        }
+
+        return ret;
+    }
+
     private int GetNowIdx()
     {
 
         for(int i = 0; i < 5; i++)
         {
-            if (fspeeds[i] > 600.0f)
+            if (fspeeds[i] > 700.0f)
                 return i;            
         }
         return -1;
+    }
+
+    // 當TileLine完成停止
+    public void FinishSpin()
+    {
+
+        //soundMgr.Play(3, false);
+
+        cnt_finishstop++;
+
+        if(cnt_finishstop == tileLines.Length)
+        {
+            cnt_finishstop = 0;
+
+            //Islotmachine2GM.OnStop();
+        }
+    }
+
+    IEnumerator PlayNectSound()
+    {
+        /*
+        bool done = false;
+        while (!done)
+        {
+            if (!soundMgr.audiosource.isPlaying)
+            {
+                soundMgr.Play(2, false);
+                done = true;
+            }
+
+            yield return new WaitForEndOfFrame();
+        }*/
+
+        yield return new WaitForEndOfFrame();
     }
 }

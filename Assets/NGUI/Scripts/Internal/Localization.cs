@@ -129,8 +129,10 @@ public static class Localization
 		{
 			if (loadFunction == null)
 			{
-				TextAsset asset = Resources.Load<TextAsset>("Localization");
-				if (asset != null) bytes = asset.bytes;
+				//TextAsset asset = Resources.Load<TextAsset>("Localization");
+                TextAsset asset = ResourceManager.Instance().GetTextAsset();
+
+                if (asset != null) bytes = asset.bytes;
 			}
 			else bytes = loadFunction("Localization");
 			localizationHasBeenSet = true;
