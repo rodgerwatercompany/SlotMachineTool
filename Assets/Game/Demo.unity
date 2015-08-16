@@ -12,70 +12,57 @@ SceneSettings:
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
-  m_ObjectHideFlags: 0
-  serializedVersion: 6
   m_Fog: 0
   m_FogColor: {r: .5, g: .5, b: .5, a: 1}
   m_FogMode: 3
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
-  m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
-  m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
-  m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_ObjectHideFlags: 0
 --- !u!127 &3
 LevelGameManager:
   m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_LightProbes: {fileID: 0}
+  m_Lightmaps: []
   m_LightmapsMode: 1
-  m_GISettings:
-    serializedVersion: 2
-    m_BounceScale: 1
-    m_IndirectOutputScale: 1
-    m_AlbedoBoost: 1
-    m_TemporalCoherenceThreshold: 1
-    m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+  m_BakedColorSpace: 0
+  m_UseDualLightmapsInForward: 0
   m_LightmapEditorSettings:
-    serializedVersion: 3
     m_Resolution: 2
-    m_BakeResolution: 40
+    m_LastUsedResolution: 0
     m_TextureWidth: 1024
     m_TextureHeight: 1024
+    m_BounceBoost: 1
+    m_BounceIntensity: 1
+    m_SkyLightColor: {r: .860000014, g: .930000007, b: 1, a: 1}
+    m_SkyLightIntensity: 0
+    m_Quality: 0
+    m_Bounces: 1
+    m_FinalGatherRays: 1000
+    m_FinalGatherContrastThreshold: .0500000007
+    m_FinalGatherGradientThreshold: 0
+    m_FinalGatherInterpolationPoints: 15
+    m_AOAmount: 0
     m_AOMaxDistance: 1
+    m_AOContrast: 1
+    m_LODSurfaceMappingDistance: 1
     m_Padding: 2
-    m_CompAOExponent: 0
-    m_LightmapParameters: {fileID: 0}
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 0}
-  m_RuntimeCPUUsage: 25
+    m_LockAtlas: 0
 --- !u!196 &5
 NavMeshSettings:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
     agentRadius: .5
     agentHeight: 2
     agentSlope: 45
@@ -84,9 +71,10 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: .166666672
-    manualCellSize: 0
-  m_NavMeshData: {fileID: 0}
+    widthInaccuracy: 16.666666
+    heightInaccuracy: 10
+    tileSizeHint: 0
+  m_NavMesh: {fileID: 0}
 --- !u!1 &74602794
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,8 +84,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 74602795}
   - 114: {fileID: 74602798}
-  - 114: {fileID: 74602797}
-  - 114: {fileID: 74602796}
   m_Layer: 5
   m_Name: TileObject_2_8
   m_TagString: Untagged
@@ -117,30 +103,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441036101}
   m_RootOrder: 7
---- !u!114 &74602796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11453968, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 74602794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &74602797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421840, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 74602794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &74602798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,8 +151,86 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_008
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
+  mFillCenter: 1
+--- !u!1 &94281349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 94281350}
+  - 114: {fileID: 94281351}
+  m_Layer: 5
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &94281350
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94281349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 398815153}
+  m_RootOrder: 1
+--- !u!114 &94281351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94281349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 1200
+  mHeight: 600
+  mDepth: -5
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2
+  mType: 0
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mAtlas: {fileID: 11400000, guid: 2f2473f73b9ca724f9080d6d76009ea2, type: 2}
+  mSpriteName: Honeycomb
   mFillCenter: 1
 --- !u!1 &98817121
 GameObject:
@@ -201,8 +241,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 98817122}
   - 114: {fileID: 98817125}
-  - 114: {fileID: 98817124}
-  - 114: {fileID: 98817123}
   m_Layer: 5
   m_Name: TileObject_2_3
   m_TagString: Untagged
@@ -222,30 +260,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441036101}
   m_RootOrder: 2
---- !u!114 &98817123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11499144, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 98817121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &98817124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11482576, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 98817121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &98817125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,8 +308,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_002
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
   mFillCenter: 1
 --- !u!1 &310873297
 GameObject:
@@ -306,8 +320,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 310873298}
   - 114: {fileID: 310873301}
-  - 114: {fileID: 310873300}
-  - 114: {fileID: 310873299}
   m_Layer: 5
   m_Name: TileObject_4_5
   m_TagString: Untagged
@@ -327,30 +339,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 754244261}
   m_RootOrder: 4
---- !u!114 &310873299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11441682, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 310873297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &310873300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11402940, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 310873297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &310873301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,9 +387,123 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_002
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
+--- !u!1 &398815152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 398815153}
+  - 114: {fileID: 398815156}
+  - 114: {fileID: 398815155}
+  - 54: {fileID: 398815154}
+  m_Layer: 5
+  m_Name: UI Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &398815153
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398815152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .001387925, y: .001387925, z: .001387925}
+  m_Children:
+  - {fileID: 1309836264}
+  - {fileID: 94281350}
+  - {fileID: 727771838}
+  - {fileID: 1819621705}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+--- !u!54 &398815154
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398815152}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &398815155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398815152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae942c9068183dc40a9d01f648273726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  showInPanelTool: 1
+  generateNormals: 0
+  widgetsAreStatic: 0
+  cullWhileDragging: 1
+  alwaysOnScreen: 0
+  anchorOffset: 0
+  softBorderPadding: 1
+  renderQueue: 0
+  startingRenderQueue: 3000
+  mClipTexture: {fileID: 0}
+  mAlpha: 1
+  mClipping: 0
+  mClipRange: {x: 0, y: 0, z: 300, w: 200}
+  mClipSoftness: {x: 4, y: 4}
+  mDepth: 0
+  mSortingOrder: 0
+  mClipOffset: {x: 0, y: 0}
+--- !u!114 &398815156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398815152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5ecb5660b11414fb042fb826e03b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scalingStyle: 2
+  manualWidth: 1920
+  manualHeight: 1080
+  minimumHeight: 320
+  maximumHeight: 1536
+  fitWidth: 1
+  fitHeight: 0
+  adjustByDPI: 0
+  shrinkPortraitUI: 0
 --- !u!1 &402078846
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,8 +513,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 402078847}
   - 114: {fileID: 402078850}
-  - 114: {fileID: 402078849}
-  - 114: {fileID: 402078848}
   m_Layer: 5
   m_Name: TileObject_5_8
   m_TagString: Untagged
@@ -432,30 +532,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1858542104}
   m_RootOrder: 7
---- !u!114 &402078848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11446292, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 402078846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &402078849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400040, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 402078846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &402078850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,8 +580,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_004
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &416623312
 GameObject:
@@ -516,8 +592,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 416623313}
   - 114: {fileID: 416623316}
-  - 114: {fileID: 416623315}
-  - 114: {fileID: 416623314}
   m_Layer: 5
   m_Name: TileObject_3_3
   m_TagString: Untagged
@@ -537,30 +611,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640857254}
   m_RootOrder: 2
---- !u!114 &416623314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11474062, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 416623312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &416623315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11432970, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 416623312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &416623316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,8 +659,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_006
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &441036100
 GameObject:
@@ -620,7 +670,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 441036101}
-  - 114: {fileID: 441036102}
   m_Layer: 5
   m_Name: TileLine_2
   m_TagString: Untagged
@@ -635,7 +684,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 441036100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -210, y: 0, z: 0}
+  m_LocalPosition: {x: -210, y: -205.990005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1842448367}
@@ -648,18 +697,6 @@ Transform:
   - {fileID: 74602795}
   m_Father: {fileID: 1819621705}
   m_RootOrder: 1
---- !u!114 &441036102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11401870, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 441036100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &466976402
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,8 +706,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 466976403}
   - 114: {fileID: 466976406}
-  - 114: {fileID: 466976405}
-  - 114: {fileID: 466976404}
   m_Layer: 5
   m_Name: TileObject_2_7
   m_TagString: Untagged
@@ -685,35 +720,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 466976402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -95, y: 1140, z: 0}
+  m_LocalPosition: {x: 0, y: 1140, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 441036101}
   m_RootOrder: 6
---- !u!114 &466976404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11411000, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 466976402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &466976405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400566, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 466976402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &466976406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,8 +773,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_006
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
   mFillCenter: 1
 --- !u!1 &531756989
 GameObject:
@@ -774,8 +785,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 531756990}
   - 114: {fileID: 531756993}
-  - 114: {fileID: 531756992}
-  - 114: {fileID: 531756991}
   m_Layer: 5
   m_Name: TileObject_5_7
   m_TagString: Untagged
@@ -795,30 +804,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1858542104}
   m_RootOrder: 6
---- !u!114 &531756991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11460274, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 531756989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &531756992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483138, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 531756989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &531756993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,8 +852,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_008
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &533779459
 GameObject:
@@ -879,8 +864,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 533779460}
   - 114: {fileID: 533779463}
-  - 114: {fileID: 533779462}
-  - 114: {fileID: 533779461}
   m_Layer: 5
   m_Name: TileObject_4_1
   m_TagString: Untagged
@@ -900,30 +883,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 754244261}
   m_RootOrder: 0
---- !u!114 &533779461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11426244, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 533779459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &533779462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11476522, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 533779459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &533779463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,8 +931,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_001
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
 --- !u!1 &618889942
 GameObject:
@@ -984,8 +943,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 618889943}
   - 114: {fileID: 618889946}
-  - 114: {fileID: 618889945}
-  - 114: {fileID: 618889944}
   m_Layer: 5
   m_Name: TileObject_5_1
   m_TagString: Untagged
@@ -1005,30 +962,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1858542104}
   m_RootOrder: 0
---- !u!114 &618889944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11489518, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 618889942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &618889945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11484054, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 618889942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &618889946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,8 +1010,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_007
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &640857253
 GameObject:
@@ -1088,7 +1021,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 640857254}
-  - 114: {fileID: 640857255}
   m_Layer: 5
   m_Name: TileLine_3
   m_TagString: Untagged
@@ -1103,7 +1035,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 640857253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -205.990005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 826263284}
@@ -1116,18 +1048,6 @@ Transform:
   - {fileID: 1908802645}
   m_Father: {fileID: 1819621705}
   m_RootOrder: 2
---- !u!114 &640857255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11479836, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 640857253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &661053948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,8 +1057,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 661053949}
   - 114: {fileID: 661053952}
-  - 114: {fileID: 661053951}
-  - 114: {fileID: 661053950}
   m_Layer: 5
   m_Name: TileObject_3_5
   m_TagString: Untagged
@@ -1158,30 +1076,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640857254}
   m_RootOrder: 4
---- !u!114 &661053950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11475934, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 661053948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &661053951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11403576, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 661053948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &661053952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,8 +1124,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_005
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &680933667
 GameObject:
@@ -1242,8 +1136,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 680933668}
   - 114: {fileID: 680933671}
-  - 114: {fileID: 680933670}
-  - 114: {fileID: 680933669}
   m_Layer: 5
   m_Name: TileObject_4_8
   m_TagString: Untagged
@@ -1263,30 +1155,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 754244261}
   m_RootOrder: 7
---- !u!114 &680933669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11476010, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 680933667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &680933670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11477174, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 680933667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &680933671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,9 +1203,66 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_007
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
+--- !u!1 &727771835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 727771838}
+  - 114: {fileID: 727771837}
+  - 114: {fileID: 727771836}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &727771836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727771835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c067a5031bd77344296bb34e8a981019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_symbols: []
+  m_symbols_stop: []
+  m_dis: 0
+  m_dis_interval: 0
+--- !u!114 &727771837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727771835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea1b770c1a66454baa659ede2c7dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_symbolLine: {fileID: 727771836}
+  m_symbolspeed: 1200
+--- !u!4 &727771838
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727771835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 398815153}
+  m_RootOrder: 2
 --- !u!1 &736427266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,8 +1272,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 736427267}
   - 114: {fileID: 736427270}
-  - 114: {fileID: 736427269}
-  - 114: {fileID: 736427268}
   m_Layer: 5
   m_Name: TileObject_4_6
   m_TagString: Untagged
@@ -1368,30 +1291,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 754244261}
   m_RootOrder: 5
---- !u!114 &736427268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11470080, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 736427266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &736427269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11432460, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 736427266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &736427270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,8 +1339,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_005
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
 --- !u!1 &754244260
 GameObject:
@@ -1451,7 +1350,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 754244261}
-  - 114: {fileID: 754244262}
   m_Layer: 5
   m_Name: TileLine_4
   m_TagString: Untagged
@@ -1466,7 +1364,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 754244260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 210, y: 0, z: 0}
+  m_LocalPosition: {x: 210, y: -205.990005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 533779460}
@@ -1479,18 +1377,6 @@ Transform:
   - {fileID: 680933668}
   m_Father: {fileID: 1819621705}
   m_RootOrder: 3
---- !u!114 &754244262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11478648, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 754244260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &756287896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,8 +1386,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 756287897}
   - 114: {fileID: 756287900}
-  - 114: {fileID: 756287899}
-  - 114: {fileID: 756287898}
   m_Layer: 5
   m_Name: TileObject_1_8
   m_TagString: Untagged
@@ -1521,30 +1405,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239356963}
   m_RootOrder: 7
---- !u!114 &756287898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11434574, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 756287896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &756287899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11472470, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 756287896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &756287900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,8 +1453,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_008
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &792388645
 GameObject:
@@ -1605,8 +1465,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 792388649}
   - 114: {fileID: 792388648}
-  - 114: {fileID: 792388647}
-  - 114: {fileID: 792388646}
   m_Layer: 5
   m_Name: TileObject_1_6
   m_TagString: Untagged
@@ -1614,30 +1472,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &792388646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11423968, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 792388645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &792388647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11401106, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 792388645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &792388648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,8 +1520,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_006
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Vine
   mFillCenter: 1
 --- !u!4 &792388649
 Transform:
@@ -1710,8 +1544,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 792391294}
   - 114: {fileID: 792391297}
-  - 114: {fileID: 792391296}
-  - 114: {fileID: 792391295}
   m_Layer: 5
   m_Name: TileObject_4_4
   m_TagString: Untagged
@@ -1731,30 +1563,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 754244261}
   m_RootOrder: 3
---- !u!114 &792391295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11466660, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 792391293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &792391296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11457870, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 792391293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &792391297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1803,8 +1611,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_001
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
 --- !u!1 &826263283
 GameObject:
@@ -1815,8 +1623,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 826263284}
   - 114: {fileID: 826263287}
-  - 114: {fileID: 826263286}
-  - 114: {fileID: 826263285}
   m_Layer: 5
   m_Name: TileObject_3_1
   m_TagString: Untagged
@@ -1836,30 +1642,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640857254}
   m_RootOrder: 0
---- !u!114 &826263285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11482866, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 826263283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &826263286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11466590, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 826263283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &826263287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,8 +1690,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_008
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &855659493
 GameObject:
@@ -1920,8 +1702,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 855659494}
   - 114: {fileID: 855659497}
-  - 114: {fileID: 855659496}
-  - 114: {fileID: 855659495}
   m_Layer: 5
   m_Name: TileObject_2_2
   m_TagString: Untagged
@@ -1941,30 +1721,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441036101}
   m_RootOrder: 1
---- !u!114 &855659495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11428600, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 855659493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &855659496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11496356, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 855659493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &855659497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,8 +1769,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_001
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
   mFillCenter: 1
 --- !u!1 &931266000
 GameObject:
@@ -2025,8 +1781,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 931266001}
   - 114: {fileID: 931266004}
-  - 114: {fileID: 931266003}
-  - 114: {fileID: 931266002}
   m_Layer: 5
   m_Name: TileObject_1_3
   m_TagString: Untagged
@@ -2046,30 +1800,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239356963}
   m_RootOrder: 2
---- !u!114 &931266002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11434872, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 931266000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &931266003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11463280, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 931266000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &931266004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2118,8 +1848,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_003
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
 --- !u!1 &937249224
 GameObject:
@@ -2130,8 +1860,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 937249225}
   - 114: {fileID: 937249228}
-  - 114: {fileID: 937249227}
-  - 114: {fileID: 937249226}
   m_Layer: 5
   m_Name: TileObject_4_7
   m_TagString: Untagged
@@ -2151,30 +1879,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 754244261}
   m_RootOrder: 6
---- !u!114 &937249226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11412056, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 937249224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &937249227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11471470, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 937249224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &937249228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2223,8 +1927,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_003
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
 --- !u!1 &942990212
 GameObject:
@@ -2235,8 +1939,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 942990213}
   - 114: {fileID: 942990216}
-  - 114: {fileID: 942990215}
-  - 114: {fileID: 942990214}
   m_Layer: 5
   m_Name: TileObject_3_4
   m_TagString: Untagged
@@ -2256,30 +1958,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640857254}
   m_RootOrder: 3
---- !u!114 &942990214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11411146, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 942990212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &942990215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11403882, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 942990212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &942990216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2328,8 +2006,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_009
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &985708841
 GameObject:
@@ -2340,8 +2018,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 985708842}
   - 114: {fileID: 985708845}
-  - 114: {fileID: 985708844}
-  - 114: {fileID: 985708843}
   m_Layer: 5
   m_Name: TileObject_1_2
   m_TagString: Untagged
@@ -2361,30 +2037,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239356963}
   m_RootOrder: 1
---- !u!114 &985708843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11465668, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 985708841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &985708844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11417002, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 985708841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &985708845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2433,8 +2085,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_002
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &995393275
 GameObject:
@@ -2445,8 +2097,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 995393276}
   - 114: {fileID: 995393279}
-  - 114: {fileID: 995393278}
-  - 114: {fileID: 995393277}
   m_Layer: 5
   m_Name: TileObject_5_6
   m_TagString: Untagged
@@ -2466,30 +2116,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1858542104}
   m_RootOrder: 5
---- !u!114 &995393277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11411352, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 995393275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &995393278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11414256, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 995393275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &995393279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2538,8 +2164,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_003
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &1159144870
 GameObject:
@@ -2605,7 +2231,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967263
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2634,8 +2260,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1236954995}
   - 114: {fileID: 1236954998}
-  - 114: {fileID: 1236954997}
-  - 114: {fileID: 1236954996}
   m_Layer: 5
   m_Name: TileObject_3_2
   m_TagString: Untagged
@@ -2655,30 +2279,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640857254}
   m_RootOrder: 1
---- !u!114 &1236954996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11489358, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1236954994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1236954997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11448956, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1236954994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1236954998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2727,8 +2327,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_007
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &1239356962
 GameObject:
@@ -2753,7 +2353,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1239356962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -420, y: 0, z: 0}
+  m_LocalPosition: {x: -420, y: -205.990005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1892165811}
@@ -2769,15 +2369,120 @@ Transform:
 --- !u!114 &1239356964
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11484314, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1239356962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 7ac1419cce9a2c141bb9eb6ed26d6e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!1 &1309836263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1309836264}
+  - 20: {fileID: 1309836266}
+  - 114: {fileID: 1309836265}
+  m_Layer: 5
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1309836264
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309836263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 398815153}
+  m_RootOrder: 0
+--- !u!114 &1309836265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309836263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a92b5d748695fd44aac9feef17ba415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventType: 1
+  eventsGoToColliders: 0
+  eventReceiverMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  debug: 0
+  useMouse: 1
+  useTouch: 1
+  allowMultiTouch: 1
+  useKeyboard: 1
+  useController: 1
+  stickyTooltip: 1
+  tooltipDelay: 1
+  mouseDragThreshold: 4
+  mouseClickThreshold: 10
+  touchDragThreshold: 40
+  touchClickThreshold: 40
+  rangeDistance: -1
+  scrollAxisName: Mouse ScrollWheel
+  verticalAxisName: Vertical
+  horizontalAxisName: Horizontal
+  submitKey0: 13
+  submitKey1: 330
+  cancelKey0: 27
+  cancelKey1: 331
+--- !u!20 &1309836266
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309836263}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: .5, g: .5, b: .5, a: 1}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: -10
+  far clip plane: 10
+  field of view: 60
+  orthographic: 1
+  orthographic size: 1
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 32
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
 --- !u!1 &1330014774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2787,8 +2492,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1330014775}
   - 114: {fileID: 1330014778}
-  - 114: {fileID: 1330014777}
-  - 114: {fileID: 1330014776}
   m_Layer: 5
   m_Name: TileObject_3_7
   m_TagString: Untagged
@@ -2808,30 +2511,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640857254}
   m_RootOrder: 6
---- !u!114 &1330014776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11480310, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1330014774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1330014777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11439148, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1330014774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1330014778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2880,8 +2559,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_003
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &1468830227
 GameObject:
@@ -2892,8 +2571,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1468830228}
   - 114: {fileID: 1468830231}
-  - 114: {fileID: 1468830230}
-  - 114: {fileID: 1468830229}
   m_Layer: 5
   m_Name: TileObject_2_4
   m_TagString: Untagged
@@ -2913,30 +2590,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441036101}
   m_RootOrder: 3
---- !u!114 &1468830229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421446, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1468830227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1468830230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11444364, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1468830227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1468830231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2985,8 +2638,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_003
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
   mFillCenter: 1
 --- !u!1 &1505959608
 GameObject:
@@ -2997,8 +2650,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1505959609}
   - 114: {fileID: 1505959612}
-  - 114: {fileID: 1505959611}
-  - 114: {fileID: 1505959610}
   m_Layer: 5
   m_Name: TileObject_1_4
   m_TagString: Untagged
@@ -3018,30 +2669,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239356963}
   m_RootOrder: 3
---- !u!114 &1505959610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11469016, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1505959608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1505959611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11488630, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1505959608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1505959612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3090,8 +2717,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_004
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &1614212643
 GameObject:
@@ -3102,8 +2729,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1614212644}
   - 114: {fileID: 1614212647}
-  - 114: {fileID: 1614212646}
-  - 114: {fileID: 1614212645}
   m_Layer: 5
   m_Name: TileObject_3_6
   m_TagString: Untagged
@@ -3123,30 +2748,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640857254}
   m_RootOrder: 5
---- !u!114 &1614212645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11459396, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1614212643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1614212646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11408910, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1614212643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1614212647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3195,8 +2796,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_004
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &1636406795
 GameObject:
@@ -3207,8 +2808,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1636406796}
   - 114: {fileID: 1636406799}
-  - 114: {fileID: 1636406798}
-  - 114: {fileID: 1636406797}
   m_Layer: 5
   m_Name: TileObject_4_2
   m_TagString: Untagged
@@ -3228,30 +2827,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 754244261}
   m_RootOrder: 1
---- !u!114 &1636406797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11441786, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1636406795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1636406798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11429584, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1636406795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1636406799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3300,8 +2875,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_009
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
 --- !u!1 &1684856260
 GameObject:
@@ -3312,8 +2887,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1684856261}
   - 114: {fileID: 1684856264}
-  - 114: {fileID: 1684856263}
-  - 114: {fileID: 1684856262}
   m_Layer: 5
   m_Name: TileObject_5_3
   m_TagString: Untagged
@@ -3333,30 +2906,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1858542104}
   m_RootOrder: 2
---- !u!114 &1684856262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11478570, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1684856260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1684856263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11432958, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1684856260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1684856264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3405,8 +2954,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_002
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &1721920636
 GameObject:
@@ -3417,8 +2966,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1721920637}
   - 114: {fileID: 1721920640}
-  - 114: {fileID: 1721920639}
-  - 114: {fileID: 1721920638}
   m_Layer: 5
   m_Name: TileObject_5_4
   m_TagString: Untagged
@@ -3438,30 +2985,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1858542104}
   m_RootOrder: 3
---- !u!114 &1721920638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11406542, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1721920636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1721920639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11435696, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1721920636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1721920640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3510,8 +3033,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_004
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &1736485680
 GameObject:
@@ -3522,8 +3045,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1736485681}
   - 114: {fileID: 1736485684}
-  - 114: {fileID: 1736485683}
-  - 114: {fileID: 1736485682}
   m_Layer: 5
   m_Name: TileObject_5_2
   m_TagString: Untagged
@@ -3543,30 +3064,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1858542104}
   m_RootOrder: 1
---- !u!114 &1736485682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11442316, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1736485680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1736485683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11401742, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1736485680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1736485684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3615,8 +3112,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_001
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &1819621704
 GameObject:
@@ -3627,7 +3124,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1819621705}
   - 114: {fileID: 1819621708}
-  - 114: {fileID: 1819621707}
   - 54: {fileID: 1819621706}
   m_Layer: 5
   m_Name: SlotMachine
@@ -3651,8 +3147,8 @@ Transform:
   - {fileID: 640857254}
   - {fileID: 754244261}
   - {fileID: 1858542104}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 398815153}
+  m_RootOrder: 3
 --- !u!54 &1819621706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3669,18 +3165,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1819621707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11452436, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1819621704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1819621708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3718,15 +3202,15 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3001
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: 0, y: 0, z: 2000, w: 570}
+  mClipRange: {x: 0, y: 0, z: 2000, w: 5000}
   mClipSoftness: {x: 4, y: 20}
-  mDepth: 2
-  mSortingOrder: -90
-  mClipOffset: {x: 0, y: 190}
+  mDepth: 4
+  mSortingOrder: 0
+  mClipOffset: {x: 0, y: 0}
 --- !u!1 &1842448366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3736,8 +3220,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1842448367}
   - 114: {fileID: 1842448370}
-  - 114: {fileID: 1842448369}
-  - 114: {fileID: 1842448368}
   m_Layer: 5
   m_Name: TileObject_2_1
   m_TagString: Untagged
@@ -3757,30 +3239,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441036101}
   m_RootOrder: 0
---- !u!114 &1842448368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11495016, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1842448366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1842448369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11480144, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1842448366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1842448370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3829,8 +3287,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_009
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
   mFillCenter: 1
 --- !u!1 &1853185023
 GameObject:
@@ -3841,8 +3299,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1853185024}
   - 114: {fileID: 1853185027}
-  - 114: {fileID: 1853185026}
-  - 114: {fileID: 1853185025}
   m_Layer: 5
   m_Name: TileObject_5_5
   m_TagString: Untagged
@@ -3862,30 +3318,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1858542104}
   m_RootOrder: 4
---- !u!114 &1853185025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11424700, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1853185023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1853185026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11485990, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1853185023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1853185027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3934,8 +3366,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_005
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Orange
   mFillCenter: 1
 --- !u!1 &1858542103
 GameObject:
@@ -3945,7 +3377,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1858542104}
-  - 114: {fileID: 1858542105}
   m_Layer: 5
   m_Name: TileLine_5
   m_TagString: Untagged
@@ -3960,7 +3391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1858542103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 420, y: 0, z: 0}
+  m_LocalPosition: {x: 420, y: -205.990005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 618889943}
@@ -3973,18 +3404,6 @@ Transform:
   - {fileID: 402078847}
   m_Father: {fileID: 1819621705}
   m_RootOrder: 4
---- !u!114 &1858542105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11471356, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1858542103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1877687042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3994,8 +3413,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1877687043}
   - 114: {fileID: 1877687046}
-  - 114: {fileID: 1877687045}
-  - 114: {fileID: 1877687044}
   m_Layer: 5
   m_Name: TileObject_1_7
   m_TagString: Untagged
@@ -4015,30 +3432,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239356963}
   m_RootOrder: 6
---- !u!114 &1877687044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11412154, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1877687042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1877687045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11466168, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1877687042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1877687046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4087,8 +3480,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_007
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Vine
   mFillCenter: 1
 --- !u!1 &1892165810
 GameObject:
@@ -4099,8 +3492,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1892165811}
   - 114: {fileID: 1892165814}
-  - 114: {fileID: 1892165813}
-  - 114: {fileID: 1892165812}
   m_Layer: 5
   m_Name: TileObject_1_1
   m_TagString: Untagged
@@ -4120,30 +3511,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239356963}
   m_RootOrder: 0
---- !u!114 &1892165812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11465292, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1892165810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1892165813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11441538, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1892165810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1892165814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4192,8 +3559,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_001
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
   mFillCenter: 1
 --- !u!1 &1908802644
 GameObject:
@@ -4204,8 +3571,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1908802645}
   - 114: {fileID: 1908802648}
-  - 114: {fileID: 1908802647}
-  - 114: {fileID: 1908802646}
   m_Layer: 5
   m_Name: TileObject_3_8
   m_TagString: Untagged
@@ -4225,30 +3590,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640857254}
   m_RootOrder: 7
---- !u!114 &1908802646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11473278, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1908802644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1908802647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11435816, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1908802644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1908802648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4297,8 +3638,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_002
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Bell
   mFillCenter: 1
 --- !u!1 &1956975176
 GameObject:
@@ -4309,8 +3650,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1956975177}
   - 114: {fileID: 1956975180}
-  - 114: {fileID: 1956975179}
-  - 114: {fileID: 1956975178}
   m_Layer: 5
   m_Name: TileObject_1_5
   m_TagString: Untagged
@@ -4330,30 +3669,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239356963}
   m_RootOrder: 4
---- !u!114 &1956975178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11491430, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1956975176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1956975179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11463504, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1956975176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1956975180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4402,8 +3717,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_005
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: strawberry
   mFillCenter: 1
 --- !u!1 &2007935744
 GameObject:
@@ -4414,8 +3729,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2007935745}
   - 114: {fileID: 2007935748}
-  - 114: {fileID: 2007935747}
-  - 114: {fileID: 2007935746}
   m_Layer: 5
   m_Name: TileObject_2_6
   m_TagString: Untagged
@@ -4435,30 +3748,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441036101}
   m_RootOrder: 5
---- !u!114 &2007935746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11407630, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2007935744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2007935747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11409902, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2007935744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2007935748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4507,8 +3796,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_005
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
   mFillCenter: 1
 --- !u!1 &2045811751
 GameObject:
@@ -4519,8 +3808,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2045811752}
   - 114: {fileID: 2045811755}
-  - 114: {fileID: 2045811754}
-  - 114: {fileID: 2045811753}
   m_Layer: 5
   m_Name: TileObject_4_3
   m_TagString: Untagged
@@ -4540,30 +3827,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 754244261}
   m_RootOrder: 2
---- !u!114 &2045811753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11478190, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045811751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2045811754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11494772, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045811751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2045811755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4612,8 +3875,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_006
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: BlueS
   mFillCenter: 1
 --- !u!1 &2071734946
 GameObject:
@@ -4638,7 +3901,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2071734946}
   m_Enabled: 1
-  serializedVersion: 6
+  serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
   m_Intensity: 1
@@ -4650,18 +3913,21 @@ Light:
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0500000007
-    m_NormalBias: .400000006
+    m_Softness: 4
+    m_SoftnessFade: 1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_BounceIntensity: 1
+  m_ShadowSamples: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
 --- !u!4 &2071734948
 Transform:
@@ -4669,7 +3935,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2071734946}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
+  m_LocalRotation: {x: .408217967, y: -.234569743, z: .109381683, w: .875426114}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4684,8 +3950,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2134538305}
   - 114: {fileID: 2134538308}
-  - 114: {fileID: 2134538307}
-  - 114: {fileID: 2134538306}
   m_Layer: 5
   m_Name: TileObject_2_5
   m_TagString: Untagged
@@ -4705,30 +3969,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441036101}
   m_RootOrder: 4
---- !u!114 &2134538306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11423466, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2134538304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2134538307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11486752, guid: 1a38bb2db185e444abc5b6bcbaa6dd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2134538304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2134538308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4777,6 +4017,6 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: symbol_004
+  mAtlas: {fileID: 11425560, guid: 7e63e95488af64644b645940f1f94fe5, type: 2}
+  mSpriteName: Apple
   mFillCenter: 1
