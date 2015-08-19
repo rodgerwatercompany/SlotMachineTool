@@ -290,16 +290,19 @@ public abstract class UITweener : MonoBehaviour
 
 	public void Sample (float factor, bool isFinished)
 	{
+
 		// Calculate the sampling value
 		float val = Mathf.Clamp01(factor);
 
 		if (method == Method.EaseIn)
 		{
+            print("EaseIn");
 			val = 1f - Mathf.Sin(0.5f * Mathf.PI * (1f - val));
 			if (steeperCurves) val *= val;
 		}
 		else if (method == Method.EaseOut)
-		{
+        {
+            print("EaseOut");
 			val = Mathf.Sin(0.5f * Mathf.PI * val);
 
 			if (steeperCurves)
@@ -309,7 +312,8 @@ public abstract class UITweener : MonoBehaviour
 			}
 		}
 		else if (method == Method.EaseInOut)
-		{
+        {
+            print("EaseInOut");
 			const float pi2 = Mathf.PI * 2f;
 			val = val - Mathf.Sin(val * pi2) / pi2;
 
@@ -323,11 +327,13 @@ public abstract class UITweener : MonoBehaviour
 			}
 		}
 		else if (method == Method.BounceIn)
-		{
+        {
+            print("BounceIn");
 			val = BounceLogic(val);
 		}
 		else if (method == Method.BounceOut)
-		{
+        {
+            print("BounceOut");
 			val = 1f - BounceLogic(1f - val);
 		}
 

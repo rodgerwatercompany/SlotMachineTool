@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SymbolLine : MonoBehaviour {
 
+    public string symbol_prefix;
+
     public Transform[] m_symbols;
 
     public Transform[] m_symbols_stop;
@@ -14,25 +16,35 @@ public class SymbolLine : MonoBehaviour {
     bool m_move;
     bool m_break;
 
+    bool m_state_moveup;
+
     public VOIDCB OnSymbolLineStopCB;
 
 
+    TweenPosition m_tweener;
+
+    string[] Names;
+
     void Awake()
     {
-        string name = "TileObject_1_";
+        //string name = "TileObject_1_";
+        
         m_symbols = new Transform[8];
         m_symbols_stop = new Transform[8];
 
         for (int i = 0; i < m_symbols.Length; i++)
-            m_symbols[i] = GameObject.Find(name + (i+1).ToString()).transform;
+            m_symbols[i] = GameObject.Find(symbol_prefix + (i + 1).ToString()).transform;
 
         m_dis_interval = 190;
+
+        m_tweener = GameObject.Find(symbol_prefix).GetComponent<TweenPosition>();
     }
 
 	// Use this for initialization
 	void Start () {
         m_move = false;
         m_break = false;
+        m_tweener.AddOnFinished(Listener);
 	}
 	
 	// Update is called once per frame
@@ -47,10 +59,33 @@ public class SymbolLine : MonoBehaviour {
         }
 	}
     
+    void Listener()
+    {
+        if(m_state_moveup)
+        {
+
+            m_move = true;
+            m_break = false;
+            m_state_moveup = false;
+
+        }
+        else
+        {
+            /*
+            if (OnSymbolLineStopCB != null)
+                OnSymbolLineStopCB();*/
+        }
+    }
     public void StartRun()
     {
-        m_move = true;
+
         m_break = false;
+
+        m_state_moveup = true;
+        m_tweener.from = m_tweener.gameObject.transform.localPosition;
+        m_tweener.to = new Vector3(transform.localPosition.x, -100, 0);
+        m_tweener.ResetToBeginning();
+        m_tweener.PlayForward();
     }
     public void StartStop()
     {
@@ -66,16 +101,33 @@ public class SymbolLine : MonoBehaviour {
         m_dis = dis;
     }
 
+    public void SetSprite(string[] names)
+    {
+        Names = names;
+    }
     void Move()
     {
-        //float m_dis = -1 * m_speed * Time.deltaTime;
 
         for (int i = 0; i < m_symbols.Length; i++)
             m_symbols[i].localPosition = new Vector3(0,m_symbols[i].localPosition.y + m_dis,0);
-            //m_symbols[i].Translate(new Vector2(0, m_dis), Space.Self);
 
         if (m_symbols[0].localPosition.y < -200)
         {
+            if (m_break)
+            {
+                if(m_symbols[0] == m_symbols_stop[0])
+                {
+                    m_symbols[0].GetComponent<UISprite>().spriteName = Names[2];
+                }
+                else if (m_symbols[0] == m_symbols_stop[1])
+                {
+                    m_symbols[0].GetComponent<UISprite>().spriteName = Names[1];
+                }
+                else if (m_symbols[0] == m_symbols_stop[2])
+                {
+                    m_symbols[0].GetComponent<UISprite>().spriteName = Names[0];
+                }
+            }
             TurnAround();
             float y = m_symbols[m_symbols.Length - 2].localPosition.y + 190;
             m_symbols[m_symbols.Length - 1].localPosition = new Vector3(0, y, 0);
@@ -98,7 +150,6 @@ public class SymbolLine : MonoBehaviour {
         }
         else
         {
-            print(m_symbols_stop[0].localPosition.y + " " + temp);
             Move();
         }
     }
@@ -116,6 +167,11 @@ public class SymbolLine : MonoBehaviour {
         
         TurnAround();
 
+
+        m_tweener.from = m_tweener.gameObject.transform.localPosition;
+        m_tweener.to = new Vector3(transform.localPosition.x, -255, 0);
+        m_tweener.ResetToBeginning();
+        m_tweener.PlayForward();
     }
 
     // 換掉第一個
