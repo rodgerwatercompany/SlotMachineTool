@@ -75,7 +75,7 @@ public class Slotmachine : MonoBehaviour {
         for (int i = 0; i < 5; i++)
         {
             m_symbolLine[i].StartRun();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
         }
     }
     IEnumerator DoStopMachine()

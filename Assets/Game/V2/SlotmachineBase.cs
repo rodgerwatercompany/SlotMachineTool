@@ -7,17 +7,10 @@ namespace Rodger
     public abstract class SlotmachineBase : MonoBehaviour
     {
 
-        public SlotLineBase[] m_slotLines;
+        protected SlotLineBase[] m_slotLines;
 
         bool m_Moving;
-        bool m_Breaking;
-
-        protected bool m_WaitCB;
-
-        protected void Listener()
-        {
-            m_WaitCB = false;
-        }
+        bool m_Breaking;        
         
         protected void StartRun()
         {

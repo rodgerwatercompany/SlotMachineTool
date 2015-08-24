@@ -61,9 +61,9 @@ namespace Rodger
         }
         public void SpecifiedSpriteData(int[] array_idx)
         {
-            m_SpriteName_Specified[0] = Array_SpriteNames[0];
-            m_SpriteName_Specified[1] = Array_SpriteNames[1];
-            m_SpriteName_Specified[2] = Array_SpriteNames[2];
+            m_SpriteName_Specified[0] = Array_SpriteNames[array_idx[0]];
+            m_SpriteName_Specified[1] = Array_SpriteNames[array_idx[1]];
+            m_SpriteName_Specified[2] = Array_SpriteNames[array_idx[2]];
         }
         #region Move and Break
         void NormalMode()
